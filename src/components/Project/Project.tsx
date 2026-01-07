@@ -32,7 +32,7 @@ export function Project() {
                 to reduce number of tickets raised. Portal to keep all tools
                 accessible in one place with integrated slack messaging system
                 to notify the team about news and outages. Error tracking tool
-                to keep track of errors and issues. Time@IBM used to track work
+                to keep track of errors and issues. Time@IBM to track work
                 hours and expenditures.
               </p>
             </div>
