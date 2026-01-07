@@ -2,8 +2,6 @@ import { Container } from './styles'
 import { BrowserRouter as Router } from 'react-router-dom'
 import { NavHashLink, HashLink } from 'react-router-hash-link'
 import { useState } from 'react'
-import sunIcon from '../../assets/sun-icon.svg'
-import moonIcon from '../../assets/moon-icon.svg'
 // import Resume from '../../assets/Vinayak_Singh_Resume.pdf'
 export function Header() {
   const [isActive, setActive] = useState(false)

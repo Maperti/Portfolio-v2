@@ -1,5 +1,4 @@
 import { Container } from "./styles";
-import AboutPicture from "../../assets/AboutPicture.png";
 import python from "../../assets/python.svg";
 import java from "../../assets/java.svg";
 import wordpress from "../../assets/wordpress.svg";
