@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import sunIcon from "../../assets/sun-icon.svg";
+import moonIcon from "../../assets/moon-icon.svg";
 
 
 export const Container = styled.header`
@@ -121,7 +123,8 @@ export const Container = styled.header`
 
   label:after {
     content: '';
-    background: #FFF;
+    background: #FFF url(${moonIcon}) no-repeat center;
+    background-size: 14px 14px;
     width: 20px;
     height: 20px;
     -webkit-border-radius: 50%;
@@ -130,7 +133,7 @@ export const Container = styled.header`
     position: absolute;
     top: 5px;
     left: 4px;
-   transition: cubic-bezier(0.68, -0.55, 0.27, 01.55) 320ms;
+    transition: cubic-bezier(0.68, -0.55, 0.27, 01.55) 320ms;
   }
 
   input:checked + label {
@@ -138,6 +141,9 @@ export const Container = styled.header`
   }
 
   input:checked + label:after {
+    content: '';
+    background: #FFF url(${sunIcon}) no-repeat center;
+    background-size: 14px 14px;
     left: calc(100% - 5px);
     -webkit-transform: translateX(-100%);
     -moz-transform: translateX(-100%);

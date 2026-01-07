@@ -28,7 +28,20 @@ export const Container = styled.section`
       color: #FFF;
       &:hover{
         transform: translateY(-5px);
-        background-color: var(--pink);
+        background-color: var(--green);
+        color: #000;
+        
+        h3, p, .tech-list {
+          color: #000;
+        }
+        
+        svg {
+          stroke: #000;
+        }
+        
+        .project-links img {
+          filter: brightness(0) saturate(100%);
+        }
       }
 
       header{

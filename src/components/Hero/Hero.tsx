@@ -8,12 +8,23 @@ import githubIcon from '../../assets/github.svg'
 import whatsapp from '../../assets/whatsapp.svg'
 import Hello from '../../assets/Hello.gif'
 import telegram from '../../assets/telegram.svg'
+import { useState, useEffect } from "react"
+
 export function Hero() {
+  const [gifKey, setGifKey] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setGifKey(prev => prev + 1)
+    }, 10000) // Reset every 10 seconds
+
+    return () => clearInterval(interval)
+  }, [])
   return (
     <Container id="home">
       <div className="hero-text">
         <ScrollAnimation animateIn="fadeInUp">
-          <p>Hello <img src={Hello} alt="Hello" width="20px"/>, I'm</p>
+          <p>Hello <img key={gifKey} src={Hello} alt="Hello" width="20px"/>, I'm</p>
         </ScrollAnimation>
         <ScrollAnimation animateIn="fadeInUp" delay={0.2 * 1000}>
           <h1>Martin Pekny</h1>
@@ -62,7 +73,7 @@ export function Hero() {
       </div>
       <div className="hero-image">
         <ScrollAnimation animateIn="fadeInRight" delay={1 * 1000}>
-          <img src={Illustration} alt="Ilustração" />
+          <img src={Illustration} alt="Illustration" />
         </ScrollAnimation>
       </div>
     </Container>
