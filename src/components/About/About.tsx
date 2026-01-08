@@ -1,15 +1,9 @@
 import { Container } from "./styles";
-import python from "../../assets/python.svg";
-import java from "../../assets/java.svg";
-import wordpress from "../../assets/wordpress.svg";
-import shopify from "../../assets/shopify.svg";
 import htmlIcon from "../../assets/html-icon.svg";
 import cssIcon from "../../assets/css-icon.svg";
 import jsIcon from "../../assets/js-icon.svg";
-// import nodeIcon from "../../assets/node-icon.svg";
 import reactIcon from "../../assets/react-icon.svg";
 import typescriptIcon from "../../assets/typescript-icon.svg";
-import vueIcon from "../../assets/vue-icon.svg";
 import boostrapIcon from "../../assets/bootstrap-icon.svg";
 import ScrollAnimation from "react-animate-on-scroll";
 
@@ -46,17 +40,17 @@ export function About() {
           <div>
           <h3 className="mb-4">Experience:</h3>
             <div className="mb-4">
+              <h4>Frontend Developer</h4>
+              <p>Goldmann systems | January 2024 - Present</p>
+              <p>Bratislava, Slovakia</p>
+            </div>
+            <div className="mb-4">
+              <h4>Frontend Developer</h4>
+              <p>Emprover | Jun 2023 - January 2024</p>
+              <p>Kosice, Slovakia</p>
+            </div>
+            <div className="mb-4">
               <h4>Fullstack Developer</h4>
-              <p>IBM Slovakia | January 2024 - Present</p>
-              <p>Bratislava, Slovakia</p>
-            </div>
-            <div className="mb-4">
-              <h4>Frontend Developer</h4>
-              <p>IBM Slovakia | Jun 2023 - January 2024</p>
-              <p>Bratislava, Slovakia</p>
-            </div>
-            <div className="mb-4">
-              <h4>Frontend Developer</h4>
               <p>IBM Slovakia | January 2019 - Jun 2023</p>
               <p>Bratislava, Slovakia</p>
             </div>
@@ -67,16 +61,6 @@ export function About() {
           <h3>Here are my main skills:</h3>
         </ScrollAnimation>
         <div className="hard-skills">
-          <div className="hability">
-            <ScrollAnimation animateIn="fadeInUp" delay={0.1 * 1000}>
-              <img src={python} alt="python" />
-            </ScrollAnimation>
-          </div>
-          <div className="hability">
-            <ScrollAnimation animateIn="fadeInUp" delay={0.11 * 1000}>
-              <img src={java} alt="java" />
-            </ScrollAnimation>
-          </div>
           <div className="hability">
             <ScrollAnimation animateIn="fadeInUp" delay={0.12 * 1000}>
               <img src={jsIcon} alt="JavaScript" />
@@ -90,21 +74,6 @@ export function About() {
           <div className="hability">
             <ScrollAnimation animateIn="fadeInUp" delay={0.14 * 1000}>
               <img src={typescriptIcon} alt="Typescript" />
-            </ScrollAnimation>
-          </div>
-          <div className="hability">
-            <ScrollAnimation animateIn="fadeInUp" delay={0.15 * 1000}>
-              <img src={vueIcon} alt="Vue" />
-            </ScrollAnimation>
-          </div>
-          <div className="hability">
-            <ScrollAnimation animateIn="fadeInUp" delay={0.16 * 1000}>
-              <img src={wordpress} alt="Wordpress" />
-            </ScrollAnimation>
-          </div>
-          <div className="hability">
-            <ScrollAnimation animateIn="fadeInUp" delay={0.17 * 1000}>
-              <img src={shopify} alt="shopify" />
             </ScrollAnimation>
           </div>
           <div className="hability">
