@@ -1,30 +1,20 @@
 import { Container } from "./styles"
 import ScrollAnimation from "react-animate-on-scroll"
-import AboutPicture from "../../assets/AboutPicture.png"
+import AboutPicture from "../../assets/AboutPicture.webp"
 import linkedin from '../../assets/linkedin.svg'
 import githubIcon from '../../assets/github.svg'
 import Hello from '../../assets/Hello.gif'
-import { useState, useEffect } from "react"
 import { useTranslation } from "react-i18next"
 
 export function Hero() {
   const { t } = useTranslation()
-  const [gifKey, setGifKey] = useState(0)
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setGifKey(prev => prev + 1)
-    }, 10000)
-
-    return () => clearInterval(interval)
-  }, [])
 
   return (
     <Container id="home">
       <div className="hero-content">
       <div className="hero-text">
         <ScrollAnimation animateIn="fadeInUp">
-          <p>{t('hero.hello')} <img key={gifKey} src={Hello} alt={t('hero.hello')} width="20px"/>, {t('hero.introduceAs')}</p>
+          <p>{t('hero.hello')} <img src={Hello} alt={t('hero.hello')} width="20" height="20"/>, {t('hero.introduceAs')}</p>
         </ScrollAnimation>
         <ScrollAnimation animateIn="fadeInUp" delay={0.2 * 1000}>   
           <h1>{t('hero.name')}</h1>
@@ -58,7 +48,7 @@ export function Hero() {
       </div>
       <div className="hero-image">
         <ScrollAnimation animateIn="fadeInRight" delay={0.4 * 1000}>
-          <img src={AboutPicture} alt={t('hero.name')} className="profile-photo" />
+          <img src={AboutPicture} alt={t('hero.name')} className="profile-photo" width={280} height={280} />
         </ScrollAnimation>
       </div>
       </div>

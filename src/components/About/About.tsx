@@ -4,7 +4,7 @@ import cssIcon from "../../assets/css-icon.svg";
 import jsIcon from "../../assets/js-icon.svg";
 import reactIcon from "../../assets/react-icon.svg";
 import typescriptIcon from "../../assets/typescript-icon.svg";
-import boostrapIcon from "../../assets/bootstrap-icon.svg";
+import bootstrapIcon from "../../assets/bootstrap-icon.svg";
 import ScrollAnimation from "react-animate-on-scroll";
 import { useTranslation } from "react-i18next";
 
@@ -81,7 +81,7 @@ export function About() {
           </div>
           <div className="hability">
             <ScrollAnimation animateIn="fadeInUp" delay={0.2 * 1000}>
-              <img src={boostrapIcon} alt="bootstrap" />
+              <img src={bootstrapIcon} alt="Bootstrap" />
             </ScrollAnimation>
           </div>
         </div>

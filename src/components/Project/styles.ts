@@ -68,7 +68,7 @@ export const Container = styled.section`
         letter-spacing: 0.12rem;
         margin-bottom: 2rem;
         a{
-          color: #FFFF;
+          color: #FFF;
           border-bottom: 1px solid var(--green);
           transition: color 0.25s;
           &:hover{

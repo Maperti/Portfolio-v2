@@ -4,17 +4,40 @@ import { FormEvent, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
 const CONTACT_EMAIL = 'martinpekny.7@gmail.com'
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 export function Form() {
   const { t } = useTranslation()
   const [submitting, setSubmitting] = useState(false)
   const [succeeded, setSucceeded] = useState(false)
 
+  function validateForm(email: string, message: string): string | null {
+    if (!EMAIL_REGEX.test(email)) {
+      return t('form.invalidEmail')
+    }
+    if (message.trim().length < 10) {
+      return t('form.messageTooShort')
+    }
+    if (message.length > 5000) {
+      return t('form.messageTooLong')
+    }
+    return null
+  }
+
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
     const form = event.currentTarget
     const email = (form.elements.namedItem('email') as HTMLInputElement).value
     const message = (form.elements.namedItem('message') as HTMLTextAreaElement).value
+
+    const validationError = validateForm(email, message)
+    if (validationError) {
+      toast.warn(validationError, {
+        position: toast.POSITION.BOTTOM_LEFT,
+        closeOnClick: true,
+      })
+      return
+    }
 
     setSubmitting(true)
 
@@ -28,6 +51,7 @@ export function Form() {
         body: JSON.stringify({
           email,
           message,
+          _honey: '',
           _subject: 'Portfolio contact form',
           _template: 'table',
         }),
@@ -47,9 +71,13 @@ export function Form() {
         return
       }
 
-      toast.error(t('form.toastError'))
+      toast.error(t('form.toastError'), {
+        position: toast.POSITION.BOTTOM_LEFT,
+      })
     } catch {
-      toast.error(t('form.toastError'))
+      toast.error(t('form.toastError'), {
+        position: toast.POSITION.BOTTOM_LEFT,
+      })
     } finally {
       setSubmitting(false)
     }
@@ -81,12 +109,14 @@ export function Form() {
           type="email"
           name="email"
           required
+          maxLength={254}
         />
         <textarea
           required
           placeholder={t('form.messagePlaceholder')}
           id="message"
           name="message"
+          maxLength={5000}
         />
         <button type="submit" disabled={submitting}>
           {submitting ? t('form.sending') : t('form.submit')}
