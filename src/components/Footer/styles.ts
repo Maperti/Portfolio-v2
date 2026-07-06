@@ -5,10 +5,18 @@ export const Container = styled.footer`
   background-color: #2b2b2b;
   padding: 3rem 15rem;
   margin-top: 10rem;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
 
+  .footer-spacer {
+    display: block;
+  }
+
+  .footer-main {
+    justify-self: center;
+    text-align: center;
+  }
 
   .logo{
     font-size: 2.8rem;
@@ -18,6 +26,7 @@ export const Container = styled.footer`
     letter-spacing: 0.2rem;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem;
     img{
       width: 2.6rem;
@@ -27,8 +36,9 @@ export const Container = styled.footer`
   .social-media{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     gap: 1rem;
+    justify-self: end;
 
     img,span{
       font-size: 3rem;
@@ -48,9 +58,21 @@ export const Container = styled.footer`
 
   @media(max-width: 800px){
     padding: 4rem 10rem;
-    flex-direction: column;
+    grid-template-columns: 1fr;
     gap: 2rem;
-    text-align: center;
+
+    .footer-spacer {
+      display: none;
+    }
+
+    .footer-main,
+    .social-media {
+      justify-self: center;
+    }
+
+    .social-media {
+      justify-content: center;
+    }
   }
   @media(max-width: 600px){
     padding: 4rem 1rem;

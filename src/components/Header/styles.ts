@@ -19,6 +19,78 @@ export const Container = styled.header`
   width: 100vw;
   z-index: 1000;
 
+  .lang-dropdown {
+    position: relative;
+    margin-left: 0.5rem;
+    .lang-trigger {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      border: none;
+      padding: 0;
+      width: 2.75rem;
+      height: 2.75rem;
+      cursor: pointer;
+      border-radius: 6px;
+      overflow: hidden;
+      outline: none;
+      .flag-icon {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      &:hover {
+        filter: brightness(1.1);
+      }
+      &:focus {
+        outline: none;
+      }
+      &:focus-visible {
+        outline: none;
+      }
+    }
+    .lang-dropdown-menu {
+      position: absolute;
+      top: calc(100% + 0.35rem);
+      left: 50%;
+      transform: translateX(-50%);
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      padding: 0;
+      box-shadow: none;
+      z-index: 1001;
+      button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: transparent;
+        border: none;
+        padding: 0;
+        width: 2.75rem;
+        height: 2.75rem;
+        cursor: pointer;
+        border-radius: 6px;
+        overflow: hidden;
+        outline: none;
+        .flag-icon {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+        }
+        &:hover {
+          filter: brightness(1.1);
+        }
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+
   nav{
     display: flex;
     align-items: center;

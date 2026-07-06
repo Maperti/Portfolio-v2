@@ -2,16 +2,16 @@ import { Container } from "./styles";
 import emailIcon from "../../assets/email-icon.svg";
 import phoneIcon from "../../assets/phone-icon.svg"
 import { Form } from "../Form/Form";
-
+import { useTranslation } from "react-i18next";
 
 export function Contact(){
-
+  const { t } = useTranslation()
   return(
     <Container id="contact">
       <header>
-        <h2>Contact</h2>
-        <p>Ready to get started on your project? </p>
-        <p>Contact me now for a Free consultation.</p>
+        <h2>{t('contact.title')}</h2>
+        <p>{t('contact.tagline1')}</p>
+        <p>{t('contact.tagline2')}</p>
       </header>
       <div className="contacts">
         <div>

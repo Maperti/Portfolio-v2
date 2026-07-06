@@ -1,0 +1,73 @@
+{
+  "header": {
+    "logoPrefix": "<Martin ",
+    "logoSuffix": " Pekny/>",
+    "nav": {
+      "home": "Home",
+      "about": "About me",
+      "project": "Work",
+      "contact": "Contact",
+      "resume": "Resume"
+    },
+    "menuOpen": "Open menu",
+    "menuClose": "Close menu",
+    "toggle": "Toggle theme"
+  },
+  "hero": {
+    "hello": "Hello",
+    "introduceAs": "I'm",
+    "name": "Martin Pekny",
+    "title": "Software Developer",
+    "experience": "9 Years of Experience",
+    "contact": "Contact me"
+  },
+  "about": {
+    "title": "About me",
+    "intro1": "Experienced Software Developer with 9 years of expertise in building robust web applications and scalable software solutions.",
+    "intro2": "I design responsive web applications, implement efficient backend services, and craft intuitive UI/UX for real business workflows.",
+    "intro3": "My experience spans full-stack development, PostgreSQL and MongoDB, agile delivery, and projects across banking, healthcare, and data validation.",
+    "experienceTitle": "Experience:",
+    "job1Title": "Frontend Developer",
+    "job1Company": "Goldmann Systems",
+    "job1Period": "Jan 2022 - Present",
+    "job1Location": "Bratislava, Slovakia",
+    "job2Title": "Frontend Developer",
+    "job2Company": "Emprover",
+    "job2Period": "Jun 2019 - Dec 2021",
+    "job2Location": "Kosice, Slovakia",
+    "job3Title": "Fullstack Developer",
+    "job3Company": "IBM Slovakia",
+    "job3Period": "Aug 2017 - May 2019",
+    "job3Location": "Bratislava, Slovakia",
+    "skillsTitle": "Core skills:"
+  },
+  "project": {
+    "title": "Selected work",
+    "project1Title": "Frontend developer · Goldmann Systems",
+    "project1Description": "Developed and maintained web and mobile applications for 365 bank, enhancing user experience and functionality. Contributed to the proposed 365 bank and Post Bank merger project, focusing on seamless integration of digital platforms. Implemented the Telemon telemedicine application, improving access to healthcare services through innovative web solutions. Developed specialized software for ambulances, functioning as a digital form to streamline data collection for medics. Mentored and supervised interns, providing code reviews and guidance to foster team growth and ensure high-quality deliverables.",
+    "project2Title": "Frontend developer · Emprover",
+    "project2Description": "Developed a unified tools for data validation, data quality checks, and error detection for Clark Capital Management Group (CCMG). Implemented data filtering capabilities based on customized requirements to enhance data analysis. Generated clear, auto-created reports that served as a solid foundation for investment management decisions.",
+    "project3Title": "Fullstack developer · IBM Slovakia",
+    "project3Description": "Developed in-house applications to automate tasks for the BMS team, significantly improving operational efficiency. Created a Helpdesk application that reduced the number of support tickets, streamlining issue resolution. Built a centralized portal integrating various tools and a Slack messaging system to enhance team communication and accessibility. Implemented an error tracking tool to monitor and manage issues, improving system stability. Developed Time@IBM for tracking work hours and expenditures, optimizing resource management. Collaborated on projects utilizing .NET backends, integrating with various systems and databases."
+  },
+  "contact": {
+    "title": "Contact",
+    "tagline1": "Have a project, product, or role in mind?",
+    "tagline2": "Send me a message and let's talk."
+  },
+  "form": {
+    "title": "Get in touch using the form",
+    "emailPlaceholder": "Email",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Send a message to get started.",
+    "submit": "Submit",
+    "sending": "Sending...",
+    "successTitle": "Thanks for getting in touch!",
+    "backToTop": "Back to the top",
+    "toastSuccess": "Email successfully sent!",
+    "toastError": "Something went wrong. Please try again or email me directly."
+  },
+  "footer": {
+    "madeWith": "This website was built with"
+  }
+}
