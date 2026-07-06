@@ -3,9 +3,16 @@ import styled from "styled-components";
 export const Container = styled.section`
   padding-top: 15%;
   display: flex;
-  justify-content: space-between;
-  gap: 8rem;
+  justify-content: flex-start;
   background: rgba(0,0,0,0);
+
+  .hero-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 5rem;
+    max-width: 85rem;
+  }
+
   .hero-text{
     & > p{
       font-size: 1.8rem;
@@ -46,24 +53,46 @@ export const Container = styled.section`
   }
 
   .hero-image{
-    img{
-      max-width: 500px;
+    flex-shrink: 0;
+    margin-top: 0.5rem;
+    margin-left: 2rem;
+    img.profile-photo{
+      width: 28rem;
+      height: 28rem;
+      max-width: 28rem;
+      object-fit: cover;
+      border-radius: 50%;
     }
   }
 
 
   @media(max-width: 960px){
-    display: block;
+    .hero-content {
+      flex-direction: column;
+      align-items: center;
+      max-width: 100%;
+    }
     margin-top: 15%;
     .hero-text{
-
+      order: 2;
+      text-align: center;
       h1{
         font-size: 5rem;
       }
     }
     
     .hero-image{
-      display: none;
+      order: 1;
+      display: flex;
+      justify-content: center;
+      margin-top: 0;
+      margin-left: 0;
+      margin-bottom: 3rem;
+      img.profile-photo{
+        width: 18rem;
+        height: 18rem;
+        max-width: 18rem;
+      }
     }
   }
 

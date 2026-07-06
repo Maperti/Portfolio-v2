@@ -1,88 +1,95 @@
 import { Container, ContainerSucces } from './styles'
-import { useForm, ValidationError } from '@formspree/react'
 import { toast, ToastContainer } from 'react-toastify'
-import ReCAPTCHA from 'react-google-recaptcha'
-import { useEffect, useState } from 'react'
-import validator from 'validator'
+import { FormEvent, useState } from 'react'
+import { useTranslation } from 'react-i18next'
+
+const CONTACT_EMAIL = 'martinpekny.7@gmail.com'
 
 export function Form() {
-  const [state, handleSubmit] = useForm('xknkpqry')
-  const [validEmail, setValidEmail] = useState(false)
-  const [isHuman, setIsHuman] = useState(false)
-  const [message, setMessage] = useState('')
-  function verifyEmail(email: string) {
-    if (validator.isEmail(email)) {
-      setValidEmail(true)
-    } else {
-      setValidEmail(false)
+  const { t } = useTranslation()
+  const [submitting, setSubmitting] = useState(false)
+  const [succeeded, setSucceeded] = useState(false)
+
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault()
+    const form = event.currentTarget
+    const email = (form.elements.namedItem('email') as HTMLInputElement).value
+    const message = (form.elements.namedItem('message') as HTMLTextAreaElement).value
+
+    setSubmitting(true)
+
+    try {
+      const response = await fetch(`https://formsubmit.co/ajax/${CONTACT_EMAIL}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          email,
+          message,
+          _subject: 'Portfolio contact form',
+          _template: 'table',
+        }),
+      })
+
+      const data = await response.json()
+
+      if (response.ok && data.success) {
+        setSucceeded(true)
+        toast.success(t('form.toastSuccess'), {
+          position: toast.POSITION.BOTTOM_LEFT,
+          pauseOnFocusLoss: false,
+          closeOnClick: true,
+          hideProgressBar: false,
+          toastId: 'succeeded',
+        })
+        return
+      }
+
+      toast.error(t('form.toastError'))
+    } catch {
+      toast.error(t('form.toastError'))
+    } finally {
+      setSubmitting(false)
     }
   }
-  useEffect(() => {
-    if (state.succeeded) {
-      toast.success('Email successfully sent!', {
-        position: toast.POSITION.BOTTOM_LEFT,
-        pauseOnFocusLoss: false,
-        closeOnClick: true,
-        hideProgressBar: false,
-        toastId: 'succeeded',
-      })
-    }
-  })
-  if (state.succeeded) {
+
+  if (succeeded) {
     return (
       <ContainerSucces>
-        <h3>Thanks for getting in touch!</h3>
+        <h3>{t('form.successTitle')}</h3>
         <button
           onClick={() => {
             window.scrollTo({ top: 0, behavior: 'smooth' })
           }}
         >
-          Back to the top
+          {t('form.backToTop')}
         </button>
         <ToastContainer />
       </ContainerSucces>
     )
   }
+
   return (
     <Container>
-      <h2>Get in touch using the form</h2>
+      <h2>{t('form.title')}</h2>
       <form onSubmit={handleSubmit}>
         <input
-          placeholder="Email"
+          placeholder={t('form.emailPlaceholder')}
           id="email"
           type="email"
           name="email"
-          onChange={(e) => {
-            verifyEmail(e.target.value)
-          }}
           required
         />
-        <ValidationError prefix="Email" field="email" errors={state.errors} />
         <textarea
           required
-          placeholder="Send a message to get started."
+          placeholder={t('form.messagePlaceholder')}
           id="message"
           name="message"
-          onChange={(e) => {
-            setMessage(e.target.value)
-          }}
         />
-        <ValidationError
-          prefix="Message"
-          field="message"
-          errors={state.errors}
-        />
-        <ReCAPTCHA
-          sitekey="6Lfj9NYfAAAAAP8wPLtzrsSZeACIcGgwuEIRvbSg"
-          onChange={(e) => {
-            setIsHuman(true)
-          }}
-        ></ReCAPTCHA>
-        <button
-          type="submit"
-          disabled={state.submitting || !validEmail || !message || !isHuman}
-        >
-          Submit
+        <button type="submit" disabled={submitting}>
+          {submitting ? t('form.sending') : t('form.submit')}
         </button>
       </form>
       <ToastContainer />
