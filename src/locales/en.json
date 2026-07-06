@@ -65,7 +65,10 @@
     "successTitle": "Thanks for getting in touch!",
     "backToTop": "Back to the top",
     "toastSuccess": "Email successfully sent!",
-    "toastError": "Something went wrong. Please try again or email me directly."
+    "toastError": "Something went wrong. Please try again or email me directly.",
+    "invalidEmail": "Please enter a valid email address.",
+    "messageTooShort": "Message must be at least 10 characters.",
+    "messageTooLong": "Message must be under 5000 characters."
   },
   "footer": {
     "madeWith": "This website was built with"
